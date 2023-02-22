@@ -5,41 +5,31 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter a year (4 digits):");
-            int year = Convert.ToInt32(Console.ReadLine());
-
-            if (year < 1000 || year > 9999)
+            if (args.Length == 0)
             {
-                Console.WriteLine("Please enter a 4-digit year.");
+                Console.WriteLine("Please provide a value for N as a command-line argument.");
                 return;
             }
 
-            bool isLeapYear = false;
+            int n = Convert.ToInt32(args[0]);
 
-            if (year % 4 == 0)
+            if (n < 0 || n >= 31)
             {
-                if (year % 100 == 0)
-                {
-                    if (year % 400 == 0)
-                    {
-                        isLeapYear = true;
-                    }
-                }
-                else
-                {
-                    isLeapYear = true;
-                }
+                Console.WriteLine("N must be between 0 and 30.");
+                return;
             }
 
-            if (isLeapYear)
+            Console.WriteLine("Powers of 2 less than or equal to 2^" + n + ":");
+
+            int power = 1;
+
+            for (int i = 0; i <= n; i++)
             {
-                Console.WriteLine(year + " is a leap year.");
-            }
-            else
-            {
-                Console.WriteLine(year + " is not a leap year.");
+                Console.WriteLine("2^" + i + " = " + power);
+                power *= 2;
             }
         }
     }
 }
+        
         
