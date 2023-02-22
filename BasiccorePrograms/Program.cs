@@ -11,25 +11,25 @@
                 return;
             }
 
-            int n = Convert.ToInt32(args[0]);
+            int n = int.Parse(args[0]);
 
-            if (n < 0 || n >= 31)
+            if (n == 0)
             {
-                Console.WriteLine("N must be between 0 and 30.");
+                Console.WriteLine("N should not be 0.");
                 return;
             }
 
-            Console.WriteLine("Powers of 2 less than or equal to 2^" + n + ":");
+            double harmonicNumber = 0;
 
-            int power = 1;
-
-            for (int i = 0; i <= n; i++)
+            for (int i = 1; i <= n; i++)
             {
-                Console.WriteLine("2^" + i + " = " + power);
-                power *= 2;
+                harmonicNumber += 1.0 / i;
             }
+
+            Console.WriteLine("The " + n + "th harmonic number is: " + harmonicNumber);
         }
     }
-}
+        }
+    
         
         
