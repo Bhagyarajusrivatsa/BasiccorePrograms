@@ -4,22 +4,21 @@
     {
         static void Main(string[] args)
         {
-            int dividend, divisor, quotient, remainder;
+            int num1 = 5;
+            int num2 = 10;
+            int temp;
 
-            Console.Write("Enter dividend: ");
-            dividend = int.Parse(Console.ReadLine());
+            Console.WriteLine("Before swapping: num1 = " + num1 + ", num2 = " + num2);
 
-            Console.Write("Enter divisor: ");
-            divisor = int.Parse(Console.ReadLine());
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
 
-            quotient = dividend / divisor;
-            remainder = dividend % divisor;
-
-            Console.WriteLine("Quotient = {0}", quotient);
-            Console.WriteLine("Remainder = {0}", remainder);
+            Console.WriteLine("After swapping: num1 = " + num1 + ", num2 = " + num2);
         }
     }
 }
+    
         
     
     
