@@ -4,20 +4,20 @@
     {
         static void Main(string[] args)
         {
-            int num1 = 5;
-            int num2 = 10;
-            int temp;
+            int num = 5;
 
-            Console.WriteLine("Before swapping: num1 = " + num1 + ", num2 = " + num2);
-
-            temp = num1;
-            num1 = num2;
-            num2 = temp;
-
-            Console.WriteLine("After swapping: num1 = " + num1 + ", num2 = " + num2);
+            if (num % 2 == 0)
+            {
+                Console.WriteLine(num + " is even");
+            }
+            else
+            {
+                Console.WriteLine(num + " is odd");
+            }
         }
     }
 }
+    
     
         
     
