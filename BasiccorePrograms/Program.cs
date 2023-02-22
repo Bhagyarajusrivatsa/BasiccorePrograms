@@ -4,40 +4,42 @@
     {
         static void Main(string[] args)
         {
-            
+
+            Console.WriteLine("Enter a year (4 digits):");
+            int year = Convert.ToInt32(Console.ReadLine());
+
+            if (year < 1000 || year > 9999)
             {
-                Console.WriteLine("Enter the number of times to flip the coin:");
-                int numFlips = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Please enter a 4-digit year.");
+                return;
+            }
 
-                if (numFlips <= 0)
+            bool isLeapYear = false;
+
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0)
                 {
-                    Console.WriteLine("Please enter a positive integer.");
-                    return;
-                }
-
-                int numHeads = 0;
-                int numTails = 0;
-                Random rnd = new Random();
-
-                for (int i = 0; i < numFlips; i++)
-                {
-                    int flip = rnd.Next(0, 2);
-                    if (flip == 0)
+                    if (year % 400 == 0)
                     {
-                        numHeads++;
-                    }
-                    else
-                    {
-                        numTails++;
+                        isLeapYear = true;
                     }
                 }
+                else
+                {
+                    isLeapYear = true;
+                }
+            }
 
-                double percentageHeads = ((double)numHeads / numFlips) * 100;
-                double percentageTails = ((double)numTails / numFlips) * 100;
-
-                Console.WriteLine("Percentage of heads: " + percentageHeads.ToString("0.00") + "%");
-                Console.WriteLine("Percentage of tails: " + percentageTails.ToString("0.00") + "%");
+            if (isLeapYear)
+            {
+                Console.WriteLine(year + " is a leap year.");
+            }
+            else
+            {
+                Console.WriteLine(year + " is not a leap year.");
             }
         }
     }
 }
+        
