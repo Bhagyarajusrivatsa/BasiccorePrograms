@@ -5,31 +5,28 @@
         static void Main(string[] args)
         {
 
-            if (args.Length == 0)
+            Console.Write("Enter a number: ");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Write("Prime factors of {0} are: ", n);
+
+            for (int i = 2; i * i <= n; i++)
             {
-                Console.WriteLine("Please provide a value for N as a command-line argument.");
-                return;
+                while (n % i == 0)
+                {
+                    Console.Write("{0} ", i);
+                    n /= i;
+                }
             }
 
-            int n = int.Parse(args[0]);
-
-            if (n == 0)
+            if (n > 1)
             {
-                Console.WriteLine("N should not be 0.");
-                return;
+                Console.Write("{0} ", n);
             }
-
-            double harmonicNumber = 0;
-
-            for (int i = 1; i <= n; i++)
-            {
-                harmonicNumber += 1.0 / i;
-            }
-
-            Console.WriteLine("The " + n + "th harmonic number is: " + harmonicNumber);
         }
     }
-        }
+}
+    
     
         
         
