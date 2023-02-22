@@ -4,28 +4,23 @@
     {
         static void Main(string[] args)
         {
+            int dividend, divisor, quotient, remainder;
 
-            Console.Write("Enter a number: ");
-            int n = int.Parse(Console.ReadLine());
+            Console.Write("Enter dividend: ");
+            dividend = int.Parse(Console.ReadLine());
 
-            Console.Write("Prime factors of {0} are: ", n);
+            Console.Write("Enter divisor: ");
+            divisor = int.Parse(Console.ReadLine());
 
-            for (int i = 2; i * i <= n; i++)
-            {
-                while (n % i == 0)
-                {
-                    Console.Write("{0} ", i);
-                    n /= i;
-                }
-            }
+            quotient = dividend / divisor;
+            remainder = dividend % divisor;
 
-            if (n > 1)
-            {
-                Console.Write("{0} ", n);
-            }
+            Console.WriteLine("Quotient = {0}", quotient);
+            Console.WriteLine("Remainder = {0}", remainder);
         }
     }
 }
+        
     
     
         
